@@ -1,102 +1,132 @@
-# missao - Sistema de Gestão de Missões
+# 🏥 Missão - Sistema de Gestão de Missões
 
-O **missao** é um sistema web desenvolvido para gerenciar campanhas missionárias, equipes de voluntários e o acompanhamento de interessados. O projeto foca em agilidade, segurança e facilidade de uso para líderes e missionários.
+[![Versão](https://img.shields.io/badge/versão-1.5.0-blue.svg)](https://github.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.2%2B-777bb4.svg)](https://www.php.net/)
+[![PWA Ready](https://img.shields.io/badge/PWA-Ready-orange.svg)](https://web.dev/progressive-web-apps/)
+[![Licença](https://img.shields.io/badge/licença-Proprietária-red.svg)](LICENSE)
+
+O **Missão** é uma plataforma robusta projetada para gerenciar campanhas missionárias, organizar gincanas de equipes e acompanhar o crescimento espiritual de cada interessado. O sistema une a simplicidade necessária para o missionário em campo com o poder de dados que o administrador precisa.
+
+<img src="docs/screenshots/dashboard_admin.png" width="800" alt="Dashboard Administrativo e BI">
+
+---
+
+## 📌 Sumário
+- [🚀 Funcionalidades e Recursos](#-funcionalidades-e-recursos)
+- [⚙️ Arquitetura e Modularidade](#️-arquitetura-e-modularidade)
+- [📱 Tecnologia PWA & Offline](#-tecnologia-pwa--offline)
+- [🎯 Módulo Campo (Missionário)](#-módulo-campo-missionário)
+- [🏆 Gincana & Engajamento](#-gincana--engajamento)
+- [📋 Módulo Secretaria](#-módulo-secretaria)
+- [📊 Relatórios & BI](#-relatórios--inteligência-de-dados)
+- [🛡️ Segurança & Administrativo](#-segurança--administrativo)
+- [📦 Instalação](#-manual-de-instalação)
+
+---
 
 ## 🚀 Funcionalidades e Recursos
+O sistema oferece ferramentas completas divididas em módulos que funcionam em harmonia para garantir o sucesso do seu evento.
 
-O sistema **Missão** oferece um conjunto completo de ferramentas para gestão eclesiástica, missões e engajamento, dividido em módulos especializados:
+## ⚙️ Arquitetura e Modularidade
+O coração do sistema é o conceito de **Campanhas**. Cada projeto (ex: "Missão Calebe", "Semana Santa") é independente e configurável.
 
-## ⚙️ Estrutura e Modularidade (Campanhas)
+```mermaid
+graph TD
+    A[Campanha Missionária] --> B{Recursos Fixos}
+    A --> C{Módulos Opcionais}
+    
+    B --> D[Gestão de Visitas]
+    B --> E[Sorteios Interativos]
+    B --> F[Central de Alertas]
+    
+    C -->|Ativar| G[Gincana de Equipes]
+    C -->|Ativar| H[Leilão de Pontos]
+    
+    G --> G1[Ranking & Placar]
+    H --> H1[Lances em Tempo Real]
+```
 
-O coração do sistema é o conceito de **Campanhas**. Cada evento (ex: "Semana Santa", "Missão Calebe", "Evangelismo Kids") é uma campanha independente.
+> [!TIP]
+> **Simples e Focado:** Se você desativar a gincana, o sistema "limpa" a tela para que o usuário veja apenas o que importa (as visitas e alunos), evitando distrações.
 
-Ao criar uma campanha, o administrador decide quais recursos ativar, garantindo que o sistema se adapte exatamente à necessidade do momento:
-*   ✅ **Modular:** Ative ou desative Gamificação, Leilão, Sorteio e Equipes individualmente.
-*   ✅ **Adaptável:** Se uma campanha não precisa de gamificação, os menus e telas relacionados são ocultados automaticamente, mantendo a interface limpa.
-*   ✅ **Focado:** Permite gerenciar desde pequenos grupos de estudo até grandes gincanas com centenas de voluntários.
+---
 
-### 📱 Tecnologia & Inovação (PWA)
-Desenvolvido com tecnologia **Progressive Web App (PWA)**, o sistema garante uma experiência moderna e resiliente:
-*   **Offline-First:** O módulo de visitas funciona perfeitamente sem internet. Os dados são armazenados localmente e sincronizados automaticamente assim que a conexão é restabelecida.
-*   **Instalação Nativa:** Pode ser instalado como um aplicativo em dispositivos Android e iOS ou em desktops, sem necessidade de lojas de aplicativos.
-*   **Performance:** Interface leve e responsiva, otimizada para uso em campo.
+## 📱 Tecnologia PWA & Offline
+Desenvolvido com tecnologia **Progressive Web App (PWA)**, o sistema garante que o missionário nunca pare de trabalhar:
 
-### 🎯 Módulo Missão (Campo)
-Focado na experiência do missionário e no trabalho porta a porta, com uma interface pensada para o uso móvel:
-*   **Minhas Visitas (App):** Tela exclusiva otimizada para celulares.
-    *   **Status Visual:** Identifique rapidamente a situação de cada aluno através de cores (Verde: Visitado hoje / Amarelo: Atrasado / Vermelho: Nunca visitado).
-    *   **Gestão de Batismos:** Atualize o status espiritual (Interessado, Agendado, Batizado) diretamente no card do aluno.
-    *   **Pontuação Especial:** Lance pontos extras manuais por mérito ou participação em gincanas.
-    *   **Histórico Completo:** Acesse o histórico de lições bíblicas, visitas anteriores e pontos acumulados com um toque.
-*   **Sincronização Inteligente:** Trabalhe offline o dia todo. O sistema guarda tudo e envia para a nuvem assim que conectar.
+- **Funciona sem Internet:** Registre visitas e atualize batismos mesmo em locais sem sinal. O sistema sincroniza tudo sozinho quando a internet voltar.
+- **Instale como um App:** Não precisa baixar da Play Store ou App Store. Basta clicar em "Adicionar à tela inicial" e usar como um aplicativo nativo.
+- **Leve e Rápido:** Otimizado para economizar bateria e dados móveis.
 
-### 🏆 Gamificação & Engajamento
-Ferramentas visuais poderosas para projetores e telões, desenhadas para animar os eventos:
-*   **Placar ao Vivo:** Uma tela *full-screen* dedicada, sem menus ou botões, que exibe o ranking das equipes em tempo real. Ideal para projeção contínua durante o evento.
-*   **Leilão de Prêmios:** Sistema interativo onde os participantes usam seus pontos acumulados ("Missão") para dar lances em prêmios reais. Aumenta o engajamento e valoriza a participação.
-*   **Sorteio Dinâmico:** Ferramenta visual de sorteio baseada nos presentes ou nas equipes, substituindo papéis manuais por uma experiência digital vibrante.
+<p align="center">
+  <img src="docs/screenshots/mobile_app.png" width="250" alt="App Mobile Offline">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/mobile_app_detalhes.png" width="250" alt="App Mobile Detalhes">
+</p>
 
-### 📋 Módulo Secretaria
-O coração administrativo da campanha, com controle total sobre dados e pontuação:
-*   **Gestão de Equipes:** Criação e organização de equipes, com ferramentas para pontuação coletiva e individual de forma ágil.
-*   **Check-in & Check-out:** Registro rápido de presença (manual ou busca inteligente), integrado automaticamente ao sistema de pontuação da equipe.
-*   **Distribuição de Alunos:** Funcionalidade para distribuir interessados entre os missionários de forma equilibrada.
-*   **Relatórios Avançados:** Geração de relatórios em PDF detalhados sobre produtividade, ranking de equipes e estatísticas de batismo.
+---
 
-### 📊 Relatórios & Inteligência de Dados
-O sistema transforma dados em estratégia com uma central completa de Business Intelligence (BI) contendo mais de 15 relatórios:
+## 🎯 Módulo Campo (Missionário)
+Interface pensada para o uso móvel e o trabalho "porta a porta":
 
-*   **📈 Batismos & Conversão:**
-    *   **Interessados:** Lista de alunos em preparo para o batismo.
-    *   **Agendados:** Controle logístico para cerimônias.
-    *   **Batizados:** Registro oficial de resultados.
-    *   **Funil de Conversão:** Gráfico de eficiência (Interessado ➔ Agendado ➔ Batizado).
+- **Minhas Visitas (App):** Lista de alunos com sinalização de cores (Verde: Visitado / Amarelo: Atrasado / Vermelho: urgente).
+- **Gestão de Batismos:** Atualize se o aluno é um Interessado, se já Agendou ou se foi Batizado com um toque.
+- **Histórico de Estudos:** Acompanhe qual lição bíblica o aluno parou e veja observações de visitas anteriores.
 
-*   **👥 Gestão de Alunos:**
-    *   **Lista Geral:** Banco de dados completo com filtros por bairro e status.
-    *   **Frequência:** Controle de assiduidade e faltas.
-    *   **Alunos em Risco (Churn):** Identifica automaticamente alunos propensos a abandonar (baixa frequência/sem visitas).
-    *   **Lista de Contatos:** Relatório limpo para ações de telemarketing/WhatsApp.
-    *   **Veteranos:** Histórico de fidelidade de participantes recorrentes.
-    *   **Histórico de Lições:** Acompanhamento pedagógico do estudo bíblico.
+---
 
-*   **🚀 Performance & Gestão:**
-    *   **Evolução Diária:** Gráfico temporal do crescimento da campanha.
-    *   **Ranking de Equipes:** Placar detalhado da gincana.
-    *   **Desempenho por Missionário:** Produtividade individual (visitas e estudos realizados).
-    *   **Pós-Campanha:** Relatório de engajamento para retenção futura.
+## 🏆 Gincana & Engajamento
+Ferramentas visuais poderosas para animar e motivar os participantes:
 
-*   **🛡️ Administrativo:**
-    *   **Lista de Colaboradores:** Relação da equipe de trabalho.
-    *   **Auditoria Master:** Controle de acessos privilegiados.
-    *   **Relatório Geral de Visitas:** Visão macro de visitas realizadas, pendentes e rejeitadas.
+- **Placar ao Vivo:** Uma tela gigante (full-screen) para projetores que mostra quem está ganhando em tempo real. Sem menus, só a emoção do ranking.
+- **Leilão de Prêmios:** Use os pontos acumulados ("Missão") para dar lances e ganhar prêmios reais. É o momento auge da gincana!
+- **Sorteio Digital:** Substitua o papel por um sorteio visual vibrante na tela, garantindo transparência e animação.
 
-### 🛡️ Administrativo & Segurança
-Controle robusto para líderes e administradores:
-*   **Gestão de Campanhas:** Central de comando para criar metas, acompanhar o progresso global (batismos, estudos) e gerenciar o ciclo de vida das campanhas.
-*   **Níveis de Acesso:** Controle granular de permissões (Master, Admin, Secretaria, Visitante).
-*   **Backup Simplificado:** Ferramenta de segurança que permite gerar e baixar uma cópia completa do banco de dados com apenas um clique, garantindo a soberania dos seus dados.
-*   **Segurança:** Proteção contra ataques comuns (SQL Injection, XSS) e bloqueio automático do instalador após a configuração.
+<img src="docs/screenshots/ranking_live.png" width="800" alt="Placar ao Vivo e Ranking">
+
+---
+
+## 📋 Módulo Secretaria
+O controle administrativo total da campanha:
+
+- **Organização de Equipes:** Ferramentas para criar equipes e distribuir missionários de forma justa.
+- **Check-in & Presença:** Registro rápido de quem chegou no evento, alimentando automaticamente os pontos da gincana.
+- **Distribuição de Interessados:** Envie novos nomes para os missionários de forma equilibrada através do mapa.
+
+---
+
+## 📊 Relatórios & Inteligência de Dados
+<img src="docs/screenshots/relatórios.png" width="800" alt="com mais de 15 relatórios">
+O sistema conta com uma central de Business Intelligence (BI) com mais de 15 relatórios:
+
+- **📈 Espiritual:** Funil de Conversão (Interessado ➔ Batizado), lista de agendamentos e metas de batismo.
+- **👥 Faltas e Risco:** Identifica automaticamente quem está parando de vir ou quem não recebe visitas há muito tempo.
+- **🚀 Performance:** Ranking detalhado, produtividade de cada missionário e evolução diária do projeto.
+- **🛡️ Auditoria:** Controle de quem acessou o quê e registros de segurança maste.
+
+---
+
+## 🛡️ Segurança & Administrativo
+Precisão técnica para garantir a integridade da sua operação:
+
+- **Sensor de Ação:** Proteção que impede o salvamento de dados caso a campanha tenha sido encerrada ou a sessão tenha expirado.
+- **Isolamento Multi-Tenant:** Cada cliente tem seus dados 100% isolados, garantindo privacidade total.
+- **Backup em um Clique:** Gere uma cópia completa de toda a sua base de dados instantaneamente para segurança.
 
 ---
 
 ## 📦 Manual de Instalação
 
-### Pré-requisitos
-*   PHP 8.0 ou superior.
-*   Banco de Dados MySQL/MariaDB.
-*   Extensões PHP: `pdo`, `pdo_mysql`.
-*   Dependências Composer instaladas.
+A instalação é guiada por um assistente web que verifica seu servidor automaticamente.
 
-> 📘 **Guia de Instalação Detalhado**
->
-> Para instruções completas sobre como preparar o ambiente, instalar dependências (Composer) e realizar a configuração do banco de dados, consulte nosso arquivo dedicado:
->
-> 👉 **[Clique aqui para ler o Guia de Instalação (INSTALL.md)](INSTALL.md)**
+> [!IMPORTANT]
+> Para detalhes técnicos como permissões de pasta, instalação do Composer e comandos SSH, leia o guia técnico:
+> 
+> 👉 **[Clique aqui para ler o INSTALL.md](INSTALL.md)**
+
+---
 
 ### Suporte e Propriedade Intelectual
+Este é um **software proprietário**. Todos os direitos são reservados. A distribuição não autorizada é proibida.
 
-Este é um software proprietário e fechado. Todos os direitos são reservados.
-A distribuição não autorizada é proibida.
-
-Copyright (c) 2025-2026 Missão.
+Copyright (c) 2025-2026 **Missão**.
