@@ -82,7 +82,13 @@ Ferramentas visuais poderosas para animar e motivar os participantes:
 - **Leilão de Prêmios:** Use os pontos acumulados ("Missão") para dar lances e ganhar prêmios reais. É o momento auge da gincana!
 - **Sorteio Digital:** Substitua o papel por um sorteio visual vibrante na tela, garantindo transparência e animação.
 
-<img src="docs/screenshots/ranking_live.png" width="800" alt="Placar ao Vivo e Ranking">
+
+
+<p align="center">
+  <img src="docs/screenshots/Sorteio.png" width="350" alt="Sorteio Digital">
+  &nbsp;
+  <img src="docs/screenshots/ranking_live.png" width="350" alt="Placar ao Vivo e Ranking">
+</p>
 
 ---
 
