@@ -79,16 +79,13 @@ Interface pensada para o uso móvel e o trabalho "porta a porta":
 Ferramentas visuais poderosas para animar e motivar os participantes:
 
 - **Placar ao Vivo:** Uma tela gigante (full-screen) para projetores que mostra quem está ganhando em tempo real. Sem menus, só a emoção do ranking.
+
+<img src="docs/screenshots/ranking_live.png" width="800" alt="Placar ao Vivo e Ranking">
+
 - **Leilão de Prêmios:** Use os pontos acumulados ("Missão") para dar lances e ganhar prêmios reais. É o momento auge da gincana!
 - **Sorteio Digital:** Substitua o papel por um sorteio visual vibrante na tela, garantindo transparência e animação.
 
-
-
-<p align="center">
-  <img src="docs/screenshots/Sorteio.png" width="350" alt="Sorteio Digital">
-  &nbsp;
-  <img src="docs/screenshots/ranking_live.png" width="350" alt="Placar ao Vivo e Ranking">
-</p>
+<img src="docs/screenshots/Sorteio.png" width="800" alt="Sorteio Digital">
 
 ---
 
