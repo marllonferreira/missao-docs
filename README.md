@@ -1,4 +1,4 @@
-# 🏥 Missão - Sistema de Gestão de Missões
+# ✅ Missão - Sistema de Gestão de Missões
 
 [![Versão](https://img.shields.io/badge/versão-1.5.0-blue.svg)](https://github.com/)
 [![PHP](https://img.shields.io/badge/PHP-8.2%2B-777bb4.svg)](https://www.php.net/)
